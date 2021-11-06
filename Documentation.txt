@@ -1,0 +1,11 @@
+# Creating Virtual Env 
+# Acticate the env (venv>\Scripts\activate.bat)
+
+
+# Run the server (uvicorn main.app --reload)
+
+# Path Operation:
+
+`@app.get("/")
+def read_root():
+    return {"message": "Welcome to my new API"}`
