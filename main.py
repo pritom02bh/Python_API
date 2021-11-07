@@ -13,6 +13,10 @@ class Post(BaseModel):
     rating: Optional[float] = None        # Return Null if no data send by users
 
 
+my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1},
+{"title": "Top laptop brands", "content": "Dell, Apple, HP, ASUS", "id": 2}]           # Saving the posts into memory
+
+
  
 @app.get("/")
 def read_root():
@@ -21,10 +25,10 @@ def read_root():
 
 @app.get("/posts")
 def get_post():
-    return {"data": "This is the post"}
+    return {"data": my_posts}
 
 
-@app.post("/createposts")
+@app.post("/posts")
 def create_post(post: Post):
     print(post)                 # Pydantic model  
     print(post.dict())          # Regular Python Dict.
